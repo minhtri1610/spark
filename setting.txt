@@ -1,0 +1,40 @@
+https://notadatascientist.com/install-spark-on-macos/
+
+xcode-select --install
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+brew install java
+#check java version
+# java -version
+# 1.8.0.xxx -> chính là java 8
+
+brew install scala@2.12
+
+brew install apache-spark
+
+
+#tạo file ~/.bash_profile
+
+export SPARK_HOME=/usr/local/Cellar/apache-spark/3.3.2/libexec           
+export PATH="$SPARK_HOME/bin/:$PATH"
+
+source ~/.bash_profile
+
+chmod +x /usr/local/Cellar/apache-spark/3.3.2/libexec/bin/*
+
+spark-shell
+
+view local ở page 
+http://192.168.43.62:4040
+
+#cài đặt pyspark
+
+pip install pyspark
+pip install findspark 
+
+tạo file test.ipynb
+
+import findspark
+from pyspark.sql import SparkSession
+
