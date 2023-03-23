@@ -1,0 +1,30 @@
+scp reducer.py hduser@172.16.22.133:/home/hduser/mycode
+scp reducer.py hduser@172.16.22.133:/home/hduser/mycode
+
+#start-dfs
+start-dfs.sh
+
+#start-yarn.sh
+start-yarn.sh
+
+hdfs dfs -mkdir /mydata
+
+hdfs dfs -copyFromLocal /home/hduser/pg20417.txt /mydata
+hdfs dfs -copyFromLocal /home/hduser/pg20417.txt /mydata
+hdfs dfs -copyFromLocal /home/hduser/5000-8.txt /mydata
+
+hdfs dfs -mkdir /myresult
+
+sudo echo "foo fooo bar" | python /home/hduser/mycode/mapper.py 
+
+#kiểm tra hadoop home ỏ đâu
+echo $HADOOP_HOME
+
+cd /usr/local/hadoop
+ls -l share/hadoop/tools/lib/ | grep strea
+
+hadoop jar share/hadoop/tools/lib/hadoop-streaming-2.6.5.jar -files "/home/hduser/mycode/mapper.py,/home/hduser/mycode/reducer.py" -mapper "python mapper.py" -reducer "python reducer.py" -input /mydata/* -output /myresult/out-res01
+
+hdfs dfs -cat /myresult/out-res01/part-00000
+
+http://172.16.22.133:8088/cluster/scheduler?openQueues=default
