@@ -1,0 +1,12 @@
+docker pull mysql/mysql-server:latest
+docker run --name=mysql_server_test --restart on-failure -d mysql/mysql-server
+docker logs mysql_server test
+docker inspect mysql_server_test
+
+docker exec -it mysql_server_test /bin/bash
+
+#id
+#groups
+#cat /etc/shadow | grep root
+
+docker cp foo.txt mysql_server_test:/home
