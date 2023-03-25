@@ -10,3 +10,11 @@ docker exec -it mysql_server_test /bin/bash
 #cat /etc/shadow | grep root
 
 docker cp foo.txt mysql_server_test:/home
+docker stop mysql_server_test
+docker start mysql_server_test
+
+
+docker logs mysql_server_test 2>&1
+[Entrypoint] GENERATED ROOT PASSWORD: ax@sV644E?#sV*uI9dQ?g^,k9V2p8Q=8
+
+docker exec -it mysql_server_test mysql -u root -p
