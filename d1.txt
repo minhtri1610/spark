@@ -18,3 +18,11 @@ docker logs mysql_server_test 2>&1
 [Entrypoint] GENERATED ROOT PASSWORD: ax@sV644E?#sV*uI9dQ?g^,k9V2p8Q=8
 
 docker exec -it mysql_server_test mysql -u root -p
+
+mysql> alter user 'root'@'localhost' identified by 'admin123';
+
+docker exec -it mysql_server_test mysql -u root -p
+
+mysql> create table tlbtest(id int, name varchar(20), salary float, primary key (id));
+
+mysql> insert into tlbtest(id, name, salary) values (101, 'peter', 2000),(102,'Sara', 3000),(103,'Hir', 3000),(104,'Opp', 4400);
