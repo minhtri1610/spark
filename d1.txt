@@ -26,3 +26,7 @@ docker exec -it mysql_server_test mysql -u root -p
 mysql> create table tlbtest(id int, name varchar(20), salary float, primary key (id));
 
 mysql> insert into tlbtest(id, name, salary) values (101, 'peter', 2000),(102,'Sara', 3000),(103,'Hir', 3000),(104,'Opp', 4400);
+
+bash-4.4# mysqldump -u root -p tlbtest >tmp.sql
+
+https://www.proprofs.com/quiz-school/quizreport.php?title=big-data_37tb&sid=309136250
