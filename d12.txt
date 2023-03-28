@@ -17,3 +17,6 @@ https://dev.mysql.com/downloads/file/?id=515726
 \sql create table tablAuthors(name varchar(50), total int, phone varchar(10),address varchar(20), primary key(name));
 
 \sql insert into tablAuthors(name, total, phone, address) values ('Tri', 1000, '09012121','HCM'),('Tri2', 2000, '02012121','HCM2'),('Tri3', 3000, '03012121','HCM3'),('Tri4', 4000, '04012121','HCM4');
+
+
+# cài đặt lại sqoop theo huong dẫn ở file d7.txt của repo https://github.com/minhtri1610/hadoop
