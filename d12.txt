@@ -1,0 +1,19 @@
+#cấu hình mysql để máy ngoài có thể kết nối vào docker mysql
+docker run --name=mysql_server_test01 -e MYSQL_ROOT_HOST=% -e MYSQL_ROOT_PASSWORD=123456 -p 127.0.0.1:3306:3306 mysql/mysql-server
+
+#tải mysql shell
+https://dev.mysql.com/downloads/file/?id=515726
+
+ MySQL  JS > \connect root@localhost:3306?connect-timeout=2000
+ #nhập pass: 123456
+ 
+ #cài đặt spot vào máy ảo
+ 
+ # MySQL  JS > \
+ 
+  MySQL  JS > \sql create database dbAuthor;
+  
+  \sql use dbAuthor;
+\sql create table tablAuthors(name varchar(50), total int, phone varchar(10),address varchar(20), primary key(name));
+
+\sql insert into tablAuthors(name, total, phone, address) values ('Tri', 1000, '09012121','HCM'),('Tri2', 2000, '02012121','HCM2'),('Tri3', 3000, '03012121','HCM3'),('Tri4', 4000, '04012121','HCM4');
