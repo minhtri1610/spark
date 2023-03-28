@@ -19,4 +19,7 @@ https://dev.mysql.com/downloads/file/?id=515726
 \sql insert into tablAuthors(name, total, phone, address) values ('Tri', 1000, '09012121','HCM'),('Tri2', 2000, '02012121','HCM2'),('Tri3', 3000, '03012121','HCM3'),('Tri4', 4000, '04012121','HCM4');
 
 
-# cài đặt lại sqoop theo huong dẫn ở file d7.txt của repo https://github.com/minhtri1610/hadoop
+# cài đặt lại sqoop theo huong dẫn ở file d7.txt của repo https://github.com/minhtri1610/hadoop  và file d8.tmp.txt
+
+
+sqoop import --connect jdbc:mysql://192.168.56.1:3306/dbAuthor --username root --password 123456 --m 1 --table tablAuthors --bindir $SQOOP_HOME --target-dir mydataTblAuthors
