@@ -1,0 +1,13 @@
+\sql use dbAuthor;
+\sql create table tablAuthors(id varchar(20), name varchar(50),age int(20), salary float, primary key(id));
+\sql insert into tablAuthors(id, name, age, salary) values ('P001', 'Nam', 29, 500), ('P002', 'Duy', 32, 750), ('P003', 'Long', 27, 1000), ('P004', 'Thanh', 35, 1250), ('P005', 'Tin', 26, 2500);
+
+#start-dfs
+start-dfs.sh
+
+#start-yarn.sh
+start-yarn.sh
+
+#sqoop import --connect jdbc:mysql://172.16.20.15:3306/dbAuthor --username root --password 123456 --m 1 --table tablAuthors --bindir $SQOOP_HOME --target-dir mydataTblAuthors
+
+sqoop import --connect jdbc:mysql://172.16.20.15:3306/dbauthor --username root --m 1 --table tablAuthors --bindir $SQOOP_HOME --target-dir mydataTblAuthors
