@@ -1,1 +1,1 @@
-
+sqoop import --connect jdbc:mysql://172.16.20.15:3306/test --driver com.mysql.jdbc.Driver --username tri_user --password 123456 --table employee --hbase-create-table --hbase-table employee_details --column-family employees --hbase-row-key id -m 1
